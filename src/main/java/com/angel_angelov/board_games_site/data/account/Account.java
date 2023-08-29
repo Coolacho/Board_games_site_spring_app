@@ -1,5 +1,6 @@
-package com.angel_angelov.board_games_site.data;
+package com.angel_angelov.board_games_site.data.account;
 
+import com.angel_angelov.board_games_site.data.customer.Customer;
 import jakarta.persistence.*;
 
 import java.util.Date;

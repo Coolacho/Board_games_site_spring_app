@@ -1,13 +1,14 @@
-package com.angel_angelov.board_games_site.data;
+package com.angel_angelov.board_games_site.data.publisher;
 
+import com.angel_angelov.board_games_site.data.product.Product;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "categories")
-public class Category {
+@Table(name = "publishers")
+public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -16,8 +17,8 @@ public class Category {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "categories", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<ProductCategories> products = new HashSet<>();
+    @OneToMany(mappedBy = "publishers", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Product> products = new HashSet<>();
 
     public int getId() {
         return id;
@@ -35,17 +36,17 @@ public class Category {
         this.name = name;
     }
 
-    public Set<ProductCategories> getProducts() {
+    public Set<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Set<ProductCategories> products) {
+    public void setProducts(Set<Product> products) {
         this.products = products;
     }
 
     @Override
     public String toString() {
-        return "Category{" +
+        return "Publisher{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", products=" + products +

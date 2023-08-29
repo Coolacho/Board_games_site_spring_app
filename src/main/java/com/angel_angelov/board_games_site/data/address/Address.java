@@ -1,5 +1,6 @@
-package com.angel_angelov.board_games_site.data;
+package com.angel_angelov.board_games_site.data.address;
 
+import com.angel_angelov.board_games_site.data.contact_info.ContactInfo;
 import jakarta.persistence.*;
 
 import java.util.HashSet;

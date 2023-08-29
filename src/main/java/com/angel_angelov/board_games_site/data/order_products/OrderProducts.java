@@ -1,5 +1,7 @@
-package com.angel_angelov.board_games_site.data;
+package com.angel_angelov.board_games_site.data.order_products;
 
+import com.angel_angelov.board_games_site.data.order.Order;
+import com.angel_angelov.board_games_site.data.product.Product;
 import jakarta.persistence.*;
 
 @Entity
