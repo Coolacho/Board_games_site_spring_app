@@ -26,7 +26,7 @@ public class Address {
     @Column(name = "country")
     private String country;
 
-    @OneToMany(mappedBy = "addresses", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "address", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<ContactInfo> contactInfoSet = new HashSet<>();
 
     public long getId() {

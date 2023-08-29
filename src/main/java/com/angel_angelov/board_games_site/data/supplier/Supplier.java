@@ -18,10 +18,10 @@ public class Supplier {
     @Column(name = "name")
     private String name;
 
-    @OneToOne(mappedBy = "suppliers", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "supplier", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private ContactInfo contactInfo;
 
-    @OneToMany(mappedBy = "suppliers", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<ProductSuppliers> productSuppliers = new HashSet<>();
 
     public int getId() {

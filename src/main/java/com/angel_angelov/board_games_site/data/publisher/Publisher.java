@@ -17,7 +17,7 @@ public class Publisher {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "publishers", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Product> products = new HashSet<>();
 
     public int getId() {

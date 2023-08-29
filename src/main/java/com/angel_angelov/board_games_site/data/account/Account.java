@@ -26,7 +26,7 @@ public class Account {
     @Column(name = "date_of_creation")
     private Date dateOfCreation;
 
-    @OneToOne(mappedBy = "accounts", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Customer customer;
 
     public long getId() {
