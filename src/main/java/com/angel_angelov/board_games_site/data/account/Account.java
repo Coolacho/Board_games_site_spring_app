@@ -19,7 +19,6 @@ public class Account {
     @Column(name = "password")
     private String password;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "type")
     private AccountType type;
 

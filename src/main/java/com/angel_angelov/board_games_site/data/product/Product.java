@@ -21,7 +21,6 @@ public class Product {
     @Column(name = "name")
     private String name;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "type")
     private ProductType type;
 

@@ -19,7 +19,6 @@ public class Order {
     @Column(name = "date_made")
     private Date dateMade;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private OrderStatus status;
 
@@ -32,7 +31,6 @@ public class Order {
     @Column(name = "is_payed")
     private Boolean isPayed;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "payment_method")
     private OrderPaymentMethod paymentMethod;
 
