@@ -19,15 +19,6 @@ public class ProductService {
     }
 
     public List<Product> getProducts() {
-        Iterable<Product> products = this.productRepository.findAll();
-        List<Product> productList = new ArrayList<>();
-        products.forEach(productList::add);
-        productList.sort(new Comparator<Product>() {
-            @Override
-            public int compare(Product o1, Product o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
-        return productList;
+        return this.productRepository.findProductsWithImages();
     }
 }

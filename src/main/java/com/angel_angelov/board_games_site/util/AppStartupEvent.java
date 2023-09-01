@@ -20,6 +20,8 @@ public class AppStartupEvent implements ApplicationListener<ApplicationReadyEven
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
         List<Product> products = this.productService.getProducts();
-        products.forEach(System.out::println);
+        products.forEach(product -> {
+            System.out.println(product.getImages());
+        });
     }
 }
