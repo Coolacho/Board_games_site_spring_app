@@ -2,6 +2,8 @@ package com.angel_angelov.board_games_site.data.order;
 
 import com.angel_angelov.board_games_site.data.order_products.OrderProducts;
 import com.angel_angelov.board_games_site.data.customer.Customer;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -10,6 +12,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "orders")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

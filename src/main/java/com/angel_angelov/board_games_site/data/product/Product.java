@@ -1,10 +1,12 @@
 package com.angel_angelov.board_games_site.data.product;
 
+import com.angel_angelov.board_games_site.data.image.Image;
 import com.angel_angelov.board_games_site.data.order_products.OrderProducts;
 import com.angel_angelov.board_games_site.data.product_categories.ProductCategories;
 import com.angel_angelov.board_games_site.data.product_suppliers.ProductSuppliers;
-import com.angel_angelov.board_games_site.data.image.Image;
 import com.angel_angelov.board_games_site.data.publisher.Publisher;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -12,6 +14,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "products")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -3,10 +3,13 @@ package com.angel_angelov.board_games_site.data.contact_info;
 import com.angel_angelov.board_games_site.data.customer.Customer;
 import com.angel_angelov.board_games_site.data.supplier.Supplier;
 import com.angel_angelov.board_games_site.data.address.Address;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "contacts_info")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class ContactInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

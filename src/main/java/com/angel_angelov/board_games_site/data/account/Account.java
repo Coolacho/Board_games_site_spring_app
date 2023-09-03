@@ -1,12 +1,15 @@
 package com.angel_angelov.board_games_site.data.account;
 
 import com.angel_angelov.board_games_site.data.customer.Customer;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "accounts")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

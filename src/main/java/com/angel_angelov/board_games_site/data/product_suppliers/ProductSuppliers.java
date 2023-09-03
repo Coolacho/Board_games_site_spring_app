@@ -2,10 +2,13 @@ package com.angel_angelov.board_games_site.data.product_suppliers;
 
 import com.angel_angelov.board_games_site.data.product.Product;
 import com.angel_angelov.board_games_site.data.supplier.Supplier;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "product_suppliers")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class ProductSuppliers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

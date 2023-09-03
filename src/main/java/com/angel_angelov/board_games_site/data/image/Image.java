@@ -1,10 +1,13 @@
 package com.angel_angelov.board_games_site.data.image;
 
 import com.angel_angelov.board_games_site.data.product.Product;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "images")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

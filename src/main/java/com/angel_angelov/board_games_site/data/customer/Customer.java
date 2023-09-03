@@ -3,6 +3,8 @@ package com.angel_angelov.board_games_site.data.customer;
 import com.angel_angelov.board_games_site.data.order.Order;
 import com.angel_angelov.board_games_site.data.account.Account;
 import com.angel_angelov.board_games_site.data.contact_info.ContactInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -10,6 +12,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "customers")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

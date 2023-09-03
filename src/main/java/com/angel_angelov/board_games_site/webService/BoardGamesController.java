@@ -1,13 +1,17 @@
 package com.angel_angelov.board_games_site.webService;
 
 import com.angel_angelov.board_games_site.business.ProductService;
-import org.json.JSONArray;
+import com.angel_angelov.board_games_site.data.product.Product;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/All_board_games")
+@RequestMapping("/api")
+@CrossOrigin({"http://192.168.2.150:5173/", "http://localhost:5173"})
 public class BoardGamesController {
     private final ProductService productService;
 
@@ -15,8 +19,8 @@ public class BoardGamesController {
         this.productService = productService;
     }
 
-    @GetMapping
-    public JSONArray getProducts() {
-        return new JSONArray(this.productService.getProducts());
+    @GetMapping("/All_board_games")
+    public List<Product> getProducts() {
+        return this.productService.getProducts();
     }
 }

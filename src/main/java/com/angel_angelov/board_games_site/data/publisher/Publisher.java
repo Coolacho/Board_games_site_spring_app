@@ -1,6 +1,8 @@
 package com.angel_angelov.board_games_site.data.publisher;
 
 import com.angel_angelov.board_games_site.data.product.Product;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -8,6 +10,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "publishers")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
