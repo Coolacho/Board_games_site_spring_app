@@ -16,6 +16,6 @@ public class ProductService {
     }
 
     public List<Product> getProducts() {
-        return this.productRepository.findAll();
+        return this.productRepository.findProductsWithImages();
     }
 }
