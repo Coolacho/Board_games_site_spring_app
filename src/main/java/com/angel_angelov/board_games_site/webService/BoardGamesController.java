@@ -23,4 +23,7 @@ public class BoardGamesController {
     public List<Product> getProducts() {
         return this.productService.getProducts();
     }
+
+    @GetMapping("/Discounted_board_games")
+    public List<Product> getDiscountedProducts(){return this.productService.getDiscountedProducts();}
 }

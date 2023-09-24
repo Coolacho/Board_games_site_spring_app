@@ -16,6 +16,18 @@ public class ProductService {
     }
 
     public List<Product> getProducts() {
-        return this.productRepository.findProductsWithImages();
+        List<Product> products = this.productRepository.findAll();
+        if (!products.isEmpty()) {
+            products = this.productRepository.loadProductImages(products);
+        }
+        return products;
+    }
+
+    public List<Product> getDiscountedProducts() {
+        List<Product> products = this.productRepository.findAllByDiscountIsNotOrderByIdAsc(0);;
+        if (!products.isEmpty()) {
+            products = this.productRepository.loadProductImages(products);
+        }
+        return products;
     }
 }

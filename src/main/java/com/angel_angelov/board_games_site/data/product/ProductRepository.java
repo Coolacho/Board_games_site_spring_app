@@ -8,13 +8,9 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
-    default List<Product> findProductsWithImages() {
-        List<Product> products = findAll();
-        if (!products.isEmpty()) {
-            products = loadProductImages(products);
-        }
-        return products;
-    }
+
+    List<Product> findAllByDiscountIsNotOrderByIdAsc(int discount);
+
 /*    @Query(value = "SELECT DISTINCT pr FROM Product pr LEFT JOIN pr.categories cts LEFT JOIN FETCH cts.category WHERE pr IN (:products)")
     List<Product> loadProductCategories(List<Product> products);*/
 
