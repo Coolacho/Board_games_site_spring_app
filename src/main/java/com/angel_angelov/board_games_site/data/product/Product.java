@@ -62,6 +62,7 @@ public class Product {
     private Set<ProductCategories> categories = new HashSet<>();
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OrderBy("id asc")
     private Set<Image> images = new HashSet<>();
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
